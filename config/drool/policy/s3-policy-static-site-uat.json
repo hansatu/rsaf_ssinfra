@@ -1,0 +1,20 @@
+{
+  "Version": "2008-10-17",
+  "Id": "PolicyForCloudFrontPrivateContent",
+  "Statement": [
+      {
+          "Sid": "AllowCloudFrontServicePrincipal",
+          "Effect": "Allow",
+          "Principal": {
+              "Service": "cloudfront.amazonaws.com"
+          },
+          "Action": "s3:GetObject",
+          "Resource": "arn:aws:s3:::sst-s3-rsaf-drool-uatezdmz-staticsite/*",
+          "Condition": {
+              "StringEquals": {
+                "AWS:SourceArn": "arn:aws:cloudfront::409734486032:distribution/E1EKYKD9D16QGM"
+              }
+          }
+      }
+  ]
+}
